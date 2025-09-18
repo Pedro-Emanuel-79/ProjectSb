@@ -1,0 +1,13 @@
+package com.example.ProjectSb;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProjectSbApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProjectSbApplication.class, args);
+	}
+
+}
