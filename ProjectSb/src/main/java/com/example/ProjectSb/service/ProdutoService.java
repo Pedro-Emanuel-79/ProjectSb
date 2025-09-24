@@ -18,11 +18,21 @@ public class ProdutoService {
         return produtos;
     }
 
-    public ProdutoEntity save(ProdutoEntity produto){
+    public Optional<ProdutoEntity> getProductService(Long id){
+        return produtoRepository.findById(id);
+    }
+
+    public ProdutoEntity insertProductService(ProdutoEntity produto){
         return produtoRepository.save(produto);
     }
 
-    public ProdutoEntity getProdutoById(Long id) {
-        return produtoRepository.findById(id).get();
+    public void deleteProductByIdService(Long id){
+        produtoRepository.deleteById(id);
+    }
+
+    public ProdutoEntity updateProductService(ProdutoEntity produto){
+        ProdutoEntity updateProduct = produtoRepository.findById(produto.getId()).get();
+        updateProduct = produto;
+        return produtoRepository.save(updateProduct);
     }
 }
